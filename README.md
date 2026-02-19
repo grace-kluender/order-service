@@ -25,6 +25,7 @@ The Order Service is responsible for:
 
 This repository follows a standardized structure used across all microservices repositories:
 
+```
 .
 ├── src/
 │ └── index.js # Express server and API routes
@@ -32,7 +33,7 @@ This repository follows a standardized structure used across all microservices r
 ├── scripts/ # Operational helper scripts
 ├── package.json
 └── README.md
-
+```
 
 ---
 
