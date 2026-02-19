@@ -7,6 +7,8 @@ const index = express();
 index.use(cors());
 index.use(express.json());
 
+const PRODUCT_SERVICE_URL = process.env.PRODUCT_SERVICE_URL || 'http://localhost:3001';
+
 // Database connection
 const pool = new Pool({
     host: process.env.DB_HOST || 'localhost',
@@ -38,7 +40,8 @@ index.post('/orders', async (req, res) => {
         const { productId, quantity } = req.body;
 
         // Verify product exists (call product service)
-        const productResponse = await axios.get(`http://product-service:3001/products/${productId}`);
+        const productResponse = await axios.get(`${PRODUCT_SERVICE_URL}/products/${productId}`);
+
         const product = productResponse.data;
 
         const totalPrice = product.price * quantity;

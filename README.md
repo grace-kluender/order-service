@@ -62,10 +62,34 @@ If not provided, default values are used.
 
 ---
 
-## Run Locally
+## Build
 
 From the `order-service` directory:
 
 ```bash
 npm install
 npm start
+```
+
+## Run/Deploy (Local)
+
+```bash
+DB_HOST=localhost DB_NAME=ecommerce DB_USER=postgres DB_PASSWORD=password \
+PRODUCT_SERVICE_URL=http://localhost:3001 \
+PORT=3002 npm start
+```
+
+## Verify Health
+
+```bash
+curl -i http://localhost:3002/health
+curl -s http://localhost:3002/orders
+```
+
+## Create an Order
+
+```bash
+curl -s -X POST http://localhost:3002/orders \
+  -H "Content-Type: application/json" \
+  -d '{"productId":1,"quantity":1}'
+```
