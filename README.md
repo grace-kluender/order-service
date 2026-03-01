@@ -46,9 +46,25 @@ This repository follows a standardized structure used across all microservices r
 
 ---
 
-## Environment Variables
+## Configuration
 
-The service supports the following environment variables:
+The service uses environment variables for configuration.
+
+1. Copy the example environment file:
+
+   cp .env.example .env
+
+2. Update values if needed.
+
+Important:
+- `PRODUCT_SERVICE_URL` must point to the Product Service.
+- For local development, use:
+
+  http://localhost:3001
+
+In Docker Compose, this will change to:
+
+  http://product-service:3001
 
 | Variable        | Default      | Description |
 |-----------------|-------------|-------------|
