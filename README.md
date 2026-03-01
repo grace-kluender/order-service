@@ -48,7 +48,7 @@ This repository follows a standardized structure used across all microservices r
 
 ## Configuration
 
-The service uses environment variables for configuration.
+This service uses environment variables for configuration.
 
 1. Copy the example environment file:
 
